@@ -4,10 +4,12 @@ const mongoose = require("mongoose");
 const passportConfig = require("./lib/passportConfig");
 const cors = require("cors");
 const fs = require("fs");
+const dotenv=require("dotenv")
+dotenv.config()
 
 // MongoDB
 mongoose
-  .connect("mongodb+srv://MothukuriRamya:test1234@cluster0.wma2gny.mongodb.net/?retryWrites=true&w=majority", {
+  .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
    
